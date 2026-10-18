@@ -1,0 +1,29 @@
+{
+  "prepared_version_date": "2026-10-17",
+  "synthetic": false,
+  "source_sha256": "781550b24610422a5d4ca0e1b445d72aee5272af4212be606be1fb91656e0878",
+  "source_rows": 4424,
+  "run_rows": 4424,
+  "train_rows": 3539,
+  "holdout_rows": 885,
+  "seed": 42,
+  "cv_folds": 5,
+  "historically_explored_holdout": true,
+  "split": "One outcome-stratified 80/20 split shared by EDA and supervised tasks",
+  "split_index_sha256": "db266123155657ddf004f161afb48e9288ccefd79ac87f8996b2afe2efeff9fc",
+  "zero_grade_observations": {
+    "zero_grades": 870,
+    "zero_grades_with_evaluations": 469
+  },
+  "python": "3.12.14",
+  "packages": {
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.8.0",
+    "matplotlib": "3.10.8",
+    "seaborn": "0.13.2",
+    "threadpoolctl": "3.6.0"
+  },
+  "elapsed_seconds": 236.55804421800076
+}

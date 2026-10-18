@@ -1,0 +1,12 @@
+{
+  "accuracy": 0.7694915254237288,
+  "f1_macro": 0.6914464475546388,
+  "selected_config": {
+    "n_estimators": 100,
+    "max_depth": 3,
+    "learning_rate": 0.1
+  },
+  "selection_cv_f1_macro": 0.7127193116537505,
+  "comparison_baseline_f1_macro": 0.7123146228501291,
+  "selection_scope": "Best within the original five-configuration GB grid, not all compared models"
+}
