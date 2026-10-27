@@ -19,7 +19,11 @@ identical. Check the SHA-256 in `../results/corrected_full/run_metadata.json` if
 using the exact original file. You do not need to put the file in this directory.
 
 The binary fields use the source values `si`/`no`; the outcome field `objetivo`
-uses `abandono`, `matriculado` and `graduado`. The loader validates the contract.
+uses `abandono`, `matriculado` and `graduado`. The loader validates the contract:
+it requires every column of `../data_schema.csv` and rejects any other column
+(for example an export index or an identifier), because each extra column would
+otherwise become a predictor in both tasks without a leakage review. Remove such
+columns first.
 Plots translate the outcome display labels while retaining source feature names.
 This makes it possible to trace a figure back to a column without altering data.
 

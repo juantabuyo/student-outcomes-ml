@@ -12,17 +12,23 @@ from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import LabelEncoder, OneHotEncoder, StandardScaler
 from config import (SEED, TEST_SIZE, SEPARATOR, BINARY_COLUMNS, CATEGORICAL_COLUMNS,
                     SECOND_SEMESTER_COLUMNS, CLASSIFICATION_TARGET, REGRESSION_TARGET,
-                    FIRST_SEMESTER_NUMERIC, SECOND_SEMESTER_NUMERIC)
+                    FIRST_SEMESTER_NUMERIC, SECOND_SEMESTER_NUMERIC, PASS_THROUGH_COLUMNS)
 
 
 def load_data(path):
     """Read the supplied semicolon-separated course dataset without changing it."""
     frame = pd.read_csv(Path(path), sep=SEPARATOR)
     required = {CLASSIFICATION_TARGET, REGRESSION_TARGET, *BINARY_COLUMNS,
-                *CATEGORICAL_COLUMNS, *FIRST_SEMESTER_NUMERIC, *SECOND_SEMESTER_COLUMNS}
+                *CATEGORICAL_COLUMNS, *FIRST_SEMESTER_NUMERIC, *SECOND_SEMESTER_COLUMNS,
+                *PASS_THROUGH_COLUMNS}
     missing = required - set(frame.columns)
     if missing:
         raise ValueError(f"Missing source columns: {sorted(missing)}")
+    # Every remaining column would become a predictor, in both tasks, without any leakage review.
+    unexpected = set(frame.columns) - required - set(PASS_THROUGH_COLUMNS)
+    if unexpected:
+        raise ValueError(f"Columns outside the source contract (data_schema.csv) would enter the "
+                         f"models as predictors; remove them first: {sorted(unexpected)}")
     if frame.isna().any().any():
         raise ValueError("Missing values require an explicit policy; this dataset has none.")
     return frame

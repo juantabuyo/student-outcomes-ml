@@ -11,6 +11,10 @@ BINARY_COLUMNS = ['desplazado', 'necesidades_educativas_especiales', 'deudor', '
 CATEGORICAL_COLUMNS = ['estado_civil', 'modo_solicitud', 'curso', 'asistencia_diurna_vespertina', 'cualificacion_previa', 'nacionalidad', 'cualificacion_madre', 'cualificacion_padre', 'ocupacion_madre', 'ocupacion_padre', 'genero']
 SECOND_SEMESTER_COLUMNS = ['asignaturas_2sem_convalidadas', 'asignaturas_2sem_matriculadas', 'asignaturas_2sem_evaluadas', 'asignaturas_2sem_aprobadas', 'nota_media_2sem', 'asignaturas_2sem_sin_evaluacion']
 
+# Predictors with no dedicated role above. With every column named above they make up the 37
+# columns of data_schema.csv, which is the whole input contract: load_data rejects any other.
+PASS_THROUGH_COLUMNS = ['asignaturas_1sem_convalidadas']
+
 CLASS_LABELS = {"abandono": "Dropout", "matriculado": "Enrolled", "graduado": "Graduate"}
 FIRST_SEMESTER_NUMERIC = ['orden_solicitud', 'nota_cualificacion_previa', 'nota_admision', 'edad_al_matricularse', 'asignaturas_1sem_matriculadas', 'asignaturas_1sem_evaluadas', 'asignaturas_1sem_aprobadas', 'nota_media_1sem', 'asignaturas_1sem_sin_evaluacion', 'tasa_desempleo', 'tasa_inflacion', 'pib']
 SECOND_SEMESTER_NUMERIC = ['asignaturas_2sem_matriculadas', 'asignaturas_2sem_evaluadas', 'asignaturas_2sem_aprobadas', 'nota_media_2sem', 'asignaturas_2sem_sin_evaluacion']
