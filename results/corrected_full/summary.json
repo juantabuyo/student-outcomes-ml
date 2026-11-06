@@ -1,0 +1,58 @@
+{
+  "classification": {
+    "accuracy": 0.7694915254237288,
+    "f1_macro": 0.6914464475546388,
+    "selected_config": {
+      "n_estimators": 100,
+      "max_depth": 3,
+      "learning_rate": 0.1
+    },
+    "selection_cv_f1_macro": 0.7127193116537505,
+    "comparison_baseline_f1_macro": 0.7123146228501291,
+    "selection_scope": "Best within the original five-configuration GB grid, not all compared models"
+  },
+  "regression": {
+    "r2": 0.7859047438782026,
+    "rmse": 2.4357575524469604,
+    "mae": 1.3448624402671296,
+    "selected_config": {
+      "n_estimators": 200,
+      "max_depth": 3,
+      "learning_rate": 0.05
+    },
+    "selection_cv_r2": 0.7604638313595959,
+    "baseline_max_depth": 3
+  },
+  "clustering": {
+    "with_second_semester": {
+      "components_90_percent": 15,
+      "components_95_percent": 17,
+      "best_k_by_silhouette": 2,
+      "reported_k": 3,
+      "scope": "Exploratory full-data profiles; no out-of-sample clustering claim",
+      "kmeans": {
+        "silhouette": 0.2533656822068706,
+        "ari": 0.1557807448264826
+      },
+      "ward": {
+        "silhouette": 0.21166137299450913,
+        "ari": 0.14028713538928078
+      }
+    },
+    "without_second_semester": {
+      "components_90_percent": 14,
+      "components_95_percent": 15,
+      "best_k_by_silhouette": 2,
+      "reported_k": 3,
+      "scope": "Exploratory full-data profiles; no out-of-sample clustering claim",
+      "kmeans": {
+        "silhouette": 0.10743222861317557,
+        "ari": 0.09610493817726647
+      },
+      "ward": {
+        "silhouette": 0.2144301231892215,
+        "ari": 0.11445670018425888
+      }
+    }
+  }
+}

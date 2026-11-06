@@ -1,0 +1,15 @@
+{
+  "components_90_percent": 15,
+  "components_95_percent": 17,
+  "best_k_by_silhouette": 2,
+  "reported_k": 3,
+  "scope": "Exploratory full-data profiles; no out-of-sample clustering claim",
+  "kmeans": {
+    "silhouette": 0.2533656822068706,
+    "ari": 0.1557807448264826
+  },
+  "ward": {
+    "silhouette": 0.21166137299450913,
+    "ari": 0.14028713538928078
+  }
+}

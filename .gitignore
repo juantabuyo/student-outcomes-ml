@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+.DS_Store
+.env
+# Original student records must not be committed without verified permission.
+data/*
+!data/README.md
+!data/synthetic_students.csv
+results/local_run/
+results/notebook_demo/
+results/synthetic_smoke/
+__MACOSX/
+._*
